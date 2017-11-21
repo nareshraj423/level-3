@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Men's World</title>
+	<meta name="generator" content="Bootply" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- bower:css -->
+	<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+	<!-- endbower -->
+	<!-- bower:js -->
+	<script src="/lib/jquery/dist/jquery.js"></script>
+	<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+	<!-- endbower -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/css/styles.css">
+	<!-- endinject -->
+	<!-- inject:js -->
+	<script src="/js/app.js"></script>
+	<!-- endinject -->
+
+	<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+	<!--template-->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container" style="">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Home</a>
+			</div>
+			<div class="collapse navbar-collapse" style="">
+				<ul class="nav navbar-nav">
+					<%for(var i=0;i<nav.length;i++){%>
+						<li>
+							<a href="<%=nav[i].Link%>">
+								<%=nav[i].Text%>
+							</a>
+						</li>
+						<%}%>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+	<div class="container">
+		<div class="col-md-12">
+			<div class="center-block text-center">
+
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<h2>Register</h2>
+			<form name="signUpForm" action="/auth/signUp" method="post">
+				<div class="form-group">
+					<label>User Name</label>
+					<input name="username" id="username" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input name="password" id="password" class="form-control">
+				</div>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<h2>Log In</h2>
+			<form name="signInForm" action="/auth/signIn" method="post">
+				<div class="form-group">
+					<label>User Name</label>
+					<input name="username" id="username" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input name="password" id="password" class="form-control">
+				</div>
+				<input type="submit" value="Log-In">
+			</form>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title">Log In/Register</h4>
+				</div>
+				<div class="modal-body">
+					<form name="signUpF" action="/auth/signUp" method="post">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email address</label>
+							<input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="text">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Password</label>
+							<input class="form-control" id="exampleInputPassword1" placeholder="Password" type="text">
+						</div>
+						<p class="text-right"><a href="#">Forgot password?</a></p>
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<a href="#" data-dismiss="modal" class="btn">Close</a>
+					<a href="#" class="">Log-in</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
